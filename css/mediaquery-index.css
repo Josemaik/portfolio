@@ -1,0 +1,159 @@
+/* Media Queries */
+@media only screen and (max-width: 1100px) {
+    #skills{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .categoria{
+        max-width: 100%;
+    }
+}
+@media only screen and (max-width: 699px) {
+    .menu-icon {
+        display: flex; /* Mostrar el ícono en móviles */
+    }
+
+    /* Ocultar el menú por defecto en móvil */
+    #menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: var(--secondary-color);
+    }
+
+    /* Mostrar el menú cuando tenga la clase "open" */
+    #menu.open {
+        display: flex;
+    }
+
+    /* Cambiar el diseño de las barras cuando el menú esté abierto */
+    .menu-icon.open span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-icon.open span:nth-child(2) {
+        opacity: 0; /* Ocultar la barra del medio */
+    }
+
+    .menu-icon.open span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .navbar {
+        padding: 40px;
+    }
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-img {
+        width: 250px;
+    }
+
+    .profile-description {
+        font-size: 1rem;
+        padding-left: 35px;
+    }
+
+    #skills{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* .categoria{
+        padding: 30px 30px 30px 30px;
+    } */
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    /* #contact{
+        align-items: end;
+    } */
+
+    .project-card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .project-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-image img {
+        width: 100%;
+    }
+
+    .project-details {
+        text-align: left;
+    }
+
+    .contributions {
+        padding-left: 0;
+    }
+    .contributions li{
+       text-align: left;
+    }
+}
+
+
+@media  (max-width: 418px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .profile-img {
+        width: 250px;
+    }
+
+    .profile-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-description {
+        font-size: 0.9rem;
+        /* margin-left: 10px;
+        justify-content: center; */
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+    }
+
+    .project-card {
+        width: 95%;
+        margin: 15px auto;
+    }
+
+    .project-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-image img {
+        width: 100%;
+    }
+
+    .project-details {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .contributions {
+        padding-left: 0;
+        font-size: 0.9rem;
+    }
+}

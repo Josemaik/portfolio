@@ -18,6 +18,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: var(--primary-color);
     padding-top: 0;
 }
@@ -39,6 +41,23 @@ h2 {
 }
 
 /* Nav Bar */
+.menu-icon {
+    display: none; /* Ocultar en pantallas grandes */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Las tres barras del menú */
+.menu-icon span {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    transition: all 0.3s ease; /* Añadir transición para animar */
+}
 
 .navbar {
     position: fixed;
@@ -137,7 +156,7 @@ h2 {
     margin-bottom: 30px;
     font-family: 'Sawarabi Mincho', serif;
     text-align: justify;
-    max-width: 80vw;
+    /*max-width: 80vw;*/
 }
 .profile-description p{
     padding: 10px;
@@ -229,31 +248,16 @@ h2 {
 }
 
 /*Proyectos*/
-.projects{
-    /* background-color: var(--highlight-color); */
-    /* background-image: url("./rb_2151143731.png");
-    height: 100vh;
-    background-size: cover;
-    background-position: center; */
-    height: 100vh;
-    background-image: url("./rb_2151143731.png");
-    background-size: 50%; /* Escala la imagen al 50% del tamaño original */
-    background-position: center;
-     /* transform: rotate(45deg) scale(0.8);
-     z-index: -1; */
-    /*background-repeat: no-repeat; /* Evita que la imagen se repita */
-    position: relative;
-}
 #projects {
+    padding-bottom: 3em;
+    padding-top: 10em;
+}
+
+.projects-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 20px;
-    margin: 40px 40px 40px 40px;
-    /*height: 100vh; /* Altura completa de la ventana 
-    background-image: url('assets/rb_2151143731.png');
-    background-size: cover; /* Hace que la imagen cubra toda la sección 
-    background-position: center; /* Centra la imagen en la sección */
+    flex-wrap: wrap;
 }
 
 .project-card {
@@ -348,6 +352,7 @@ h2 {
 
 /*Contacto*/
 #contact {
+    width: 100%;
     background-color: var(--secondary-color);
     color: white;
     text-align: center;
