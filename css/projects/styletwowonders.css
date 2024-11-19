@@ -1,0 +1,54 @@
+:root {
+    --primary-color: #f3eee8;
+    --secondary-color: #799ba1;
+
+    --highlight-color: #c23a46;
+
+    --text-color: #333333;
+    --text--ent-manager: #54c45e;
+    --text--ai-system: #fc9432;
+    --text--ai-component: #d7faf5;
+    --text--ai-bt: #e81313;
+    --text--ai-bb: #00c2a8;
+    --text--ai-sb: #c3f7c8;
+    --text--ai-pf: #edf5ff;
+    --text--ai-sp: #ffd9d9;
+    --text--ai-navmesh: #fcfcca;
+}
+.tecnologia-title{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+.color-identifier-buttom{
+    width: 50px;
+    height: 20px;
+    margin-left: 10px;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 15px;
+}
+#ent_manager{
+    background-color: var(--text--ent-manager);
+}
+#ai-system{
+    background-color: var(--text--ai-system);
+}
+#ai-component{
+    background-color: var(--text--ai-component);;
+}
+#ai-bts{
+    background-color: var(--text--ai-bt);
+}
+#ai-bb{
+    background-color: var(--text--ai-bb);
+}
+#ai-sb{
+    background-color: var(--text--ai-sb);
+}
+#ai-pathf{
+    background-color: var(--text--ai-pf);
+}
+#ai-sp{
+    background-color: var(--text--ai-sp);
+}
