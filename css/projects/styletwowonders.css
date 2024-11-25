@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+
 :root {
     --primary-color: #f3eee8;
     --secondary-color: #799ba1;
@@ -14,6 +17,95 @@
     --text--ai-pf: #edf5ff;
     --text--ai-sp: #ffd9d9;
     --text--ai-navmesh: #fcfcca;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-margin: 53px;
+}
+/*Aqui defino las fuentes de los h1,h2,h3*/
+h1, h2, h3 {
+    font-family: 'Playpen Sans';
+}
+/*Aqui defino la fuente de los parráfos*/
+p,a{
+    font-family: 'Sawarabi Mincho', serif;
+}
+
+/* Nav Bar */
+.menu-icon {
+    display: none; /* Ocultar en pantallas grandes */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Las tres barras del menú */
+.menu-icon span {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    transition: all 0.3s ease; /* Añadir transición para animar */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #799ba1;
+    color: var(--primary-color);
+    z-index: 1000;
+}
+
+.navbar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar nav ul li {
+    margin: 0 20px;
+    width: 100px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Presentation*/
+#presentation{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 5em;
+}
+#gameplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+#presentation > h1{
+    text-align: center;
+}
+#presentation > p{  
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-family: 'Sawarabi Mincho', serif;
+    text-align: justify;
+    margin: 10px 10px 10px 10px;
 }
 .tecnologia-title{
     display:flex;

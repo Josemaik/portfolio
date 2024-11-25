@@ -7,14 +7,33 @@
     <link rel="stylesheet" href="../css/projects/styletwowonders.css">
 </head>
 <body>
+    <header class="navbar">
+        <nav>
+            <div class="menu-icon" id="menu-icon">
+                <!-- Este ícono de hamburguesa -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Portfolio</a></li>
+                <li><a href="assets/CV_JoseManuel.pdf">Résumé</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <section id="presentation">
-        <p>Two Wonders</p>
+        <h1>Two Wonders</h1>
         <p>Two Wonders is a 3D action-adventure game with an isometric view, inspired by games like Tunic or The Legend of Zelda, where exploration is key element. The game combines strategic puzzle-solving with elemental combat, where players must use different elemental abilities to defeat enemies, each possessing unique elemental strengths and weaknesses.</p>
         <p>The game was entirely developed from scratch in C++, including both the game itself and the underlying technology.</p>
-        <iframe width="700" height="400" src="https://www.youtube.com/embed/SLrBhVI0wS0"
-                             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowfullscreen>
-        </iframe>
+        <div id="gameplay">
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/SLrBhVI0wS0"
+                                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowfullscreen>
+            </iframe>
+        </div>
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/josemanuelsorianob/" class="social-icon"><img src="assets/linkedin.png" alt="LinkedIn"></a>
             <a href="https://github.com/Josemaik" class="social-icon"><img src="assets/github-logo.png" alt="GitHub"></a>
@@ -25,6 +44,24 @@
     <section id="contributions">
         <p>Primary Role: <span>AI programmer</span></p>
         <h1>My Contributions</h1>
+        <div id="ecs">
+            <h2>Entity-Component-System(ECS)</h2>
+            <p>ECS is an architecture that separates entities into components (data) and systems (logic). 
+                Entities are just containers, components define characteristics, and systems process the logic. 
+                This allows for greater flexibility and optimization in managing game objects.
+            </p>
+            <p>I worked on the implementation of the ECS, specifically in the construction of SlotMap matrix structure that would allow
+                us to store the data of the components that each entity could have in binary key system.
+                Then, we implement entity manager which contains functions related to the managment of entities like their Creation, addition of components or tags
+                and their destruction.
+            </p>
+            <!-- <img> esquema basico del ECS-->
+        </div>
+        <div>
+            <h2>Zelda Model</h2>
+            <p>Our game is based on the model of The legend of Zelda. For this reason, we start by implementing its basics mechanics such as collecting objects, sword attack, shield, open doors among others.</p>
+            <p>My job here was to implement the basic Zelda enemies such as the Keese (random movement), Octorok (random movement and shooting),AquaMentus (fires 3 projectiles) or RiverZora (change position and shoot towards the player)</p>
+        </div>
         <div id="aiengine">
             <h2>AI Engine</h2>
             <p>I developed an AI engine from scratch in c++ which would be in charge of processing different entities
@@ -36,36 +73,59 @@
                     <h3>AI Component</h3>
                     <button class="color-identifier-buttom" id="ai-component" dis></button>
                 </div>
+                <p>This component define characteristics about AI entities.Between them, we can find fisics aspects(velocity, aceleration or position) , 
+                    flags to know what alert states are active or if it detect player, radius(detection,attack,arrival), path, behaviour tree instance, perception aspects(field of view,distance to listen) and timers to
+                    manage spawning,couldowns, heal among others.
+                </p>
             </div>
             <div class="tecnologia">
                 <div class="tecnologia-title">
-                    <h3>Entity Manager</h3>
+                    <h3>AI Manager</h3>
                     <button class="color-identifier-buttom" id="ent_manager" dis></button>
                 </div>
+                <p>This manager is responsible for generating entity AIs using the data provided in a JSON file.First, it 
+                    extracts information such us position, rotation, scale, type, combat characteristics and more.
+                Then, create a specific behaviour tree for each enemy type, assign the necessary components and tags.</p>
             </div>
             <div class="tecnologia">
                 <div class="tecnologia-title">
                     <h3>AI System</h3>
                     <button class="color-identifier-buttom" id="ai-system" dis></button>
                 </div>
+                <p>This system update the perception and behavior of enemy entities in the game, detecting the player and updating a shared "BlackBoard" with relevant information such as positions, life states and potential targets. Additionally, it runs behavior trees for each entity based on its state, provides data for visual debugging (such as vision cones), and ensures consistency by removing outdated information from non-relevant enemies.</p>
             </div>
             <div class="tecnologia">
                 <div class="tecnologia-title">
                     <h3>Behaviour Trees</h3>
                     <button class="color-identifier-buttom" id="ai-bts" dis></button>
                 </div>
+                <p>Structure used in AI to model the behaviour of entities whose main function is organize and execute tasks or actions in a 
+                    hierarchical and modular way.
+                </p>
+                <p>At a tecnical level, behaviour tree class it's responsible for the creation of the nodes controlling and managing the reserved memory space, as well as,
+                    their correct execution and node class contains virtual run functions tha all nodes implement, differentes states that result from
+                    the execution and the context(references to components or managers).
+                    From the latter, the selector, sequence and decision node is created.
+                </p>
+                <p>My work hear consist in design the bt diagram from each enemy,create all necessary nodes(conditions and actions) and after create the structure in AI manager. Finally, I test the enemies in
+                    a level called "Gym" with obstacles and targets help myself with debuggers and in-game editor.
+                </p>
             </div>
             <div class="tecnologia">
                 <div class="tecnologia-title">
                     <h3>Blackboard</h3>
                     <button class="color-identifier-buttom" id="ai-bb" dis></button>
                 </div>
+                <p>Is a shared data container to manage communication and coordination between different AIs.It is used by behaviour tree and updated by AI system.</p>
+                <p>In my case I used it to communicate slime and boss type AIs which had to know their life, active action, alertness among them. It also contains data on the spawn position, direction and vision cones.</p>
             </div>
             <div class="tecnologia">
                 <div class="tecnologia-title">
                     <h3>Steering Behaviours</h3>
                     <button class="color-identifier-buttom" id="ai-sb" dis></button>
                 </div>
+                <p>These behaviors allow agents to move realistically through the environment, adjusting their direction and speed in real time based on their objectives and environmental conditions.</p>
+                <p>In Two Wonders I implement an specific types of movement like Seek, Arrive, Flee, Pursue, Avoid and Evade. All of these return a Steer_t structure, which contains information about the agent's speed, orientation, and whether it has arrived.</p>
             </div>
             <div class="tecnologia">
                 <div class="tecnologia-title">
@@ -79,8 +139,6 @@
                     <button class="color-identifier-buttom" id="ai-sp" dis></button>
                 </div>
             </div>
-        </div>
-        <div id="ecs">
         </div>
         <div id="animation engine">
         </div>
