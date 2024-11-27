@@ -19,7 +19,7 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Portfolio</a></li>
-                <li><a href="assets/CV_JoseManuel.pdf">Résumé</a></li>
+                <li><a href="assets/CV_JoseManuel.pdf">CV</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -35,16 +35,15 @@
             </iframe>
         </div>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/josemanuelsorianob/" class="social-icon"><img src="assets/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://github.com/Josemaik" class="social-icon"><img src="assets/github-logo.png" alt="GitHub"></a>
-            <a href="mailto:josemanuelsorianob@gmail.com" class="social-icon"><img src="assets/gmail.png" alt="Email"></a>
-            <a href="https://josemasito-6.itch.io/" class="social-icon"><img src="assets/itch-io-brands-solid.svg" alt="Itch.io"></a>
+            <a href="https://kaiwagames.itch.io/two-wonders" class="social-icon"><img src="../assets/itch-io-brands-solid.svg" alt="Itch.io"></a>
+            <a href="https://www.youtube.com/channel/UC5nW2ZDVgzqtlS4zwy0j98g" class="social-icon"><img src="../assets/youtube_icon.png" alt="YouTube"></a>
+            <a href="https://www.instagram.com/kaiwagames/" class="social-icon"><img src="../assets/logoinsta_2.png" alt="Instagram"></a>
         </div>
     </section>
     <section id="contributions">
-        <p>Primary Role: <span>AI programmer</span></p>
+        <span>Primary Role: AI programmer</span>
         <h1>My Contributions</h1>
-        <div id="ecs">
+        <div id="ecs" class="contribution">
             <h2>Entity-Component-System(ECS)</h2>
             <p>ECS is an architecture that separates entities into components (data) and systems (logic). 
                 Entities are just containers, components define characteristics, and systems process the logic. 
@@ -56,18 +55,25 @@
                 and their destruction.
             </p>
             <!-- <img> esquema basico del ECS-->
+             <div class="imgs">
+                <img src="../assets/ECS-diagram.png" width="800px" height="800px">
+             </div>
         </div>
-        <div>
+        <div class="contribution">
             <h2>Zelda Model</h2>
             <p>Our game is based on the model of The legend of Zelda. For this reason, we start by implementing its basics mechanics such as collecting objects, sword attack, shield, open doors among others.</p>
             <p>My job here was to implement the basic Zelda enemies such as the Keese (random movement), Octorok (random movement and shooting),AquaMentus (fires 3 projectiles) or RiverZora (change position and shoot towards the player)</p>
+            <div class="imgs">
+                <img src="../assets/modelozelda1.png" width="390px" height="300px">
+                <img src="../assets/modelozelda2.png" width="400px" height="300px">
+            </div>
         </div>
-        <div id="aiengine">
+        <div id="aiengine"  class="contribution">
             <h2>AI Engine</h2>
             <p>I developed an AI engine from scratch in c++ which would be in charge of processing different entities
                  such as enemies or npcs and giving them behaviors according to their previous design. </p>
-            <p>The technologies that make up this engine have been developed these steps: design, implementation and testing/fixing alternatively.</p>
-            <img src="../assets/AIEngine_diagram.png">
+            <p>The technologies that make up this engine have been developed following these steps: design, implementation and testing/fixing alternatively.</p>
+            <img src="../assets/AIEngine_diagram.png" width="700px" width="500px">
             <div class="tecnologia">
                 <div class="tecnologia-title">
                     <h3>AI Component</h3>
@@ -110,6 +116,10 @@
                 <p>My work hear consist in design the bt diagram from each enemy,create all necessary nodes(conditions and actions) and after create the structure in AI manager. Finally, I test the enemies in
                     a level called "Gym" with obstacles and targets help myself with debuggers and in-game editor.
                 </p>
+                <div class="imgs-col">
+                    <img src="../assets/spider_bt_diagram.png" width="600px" height="250px">
+                    <img src="../assets/gym_ia_1.png" width="600px" height="350px">
+                </div>
             </div>
             <div class="tecnologia">
                 <div class="tecnologia-title">
@@ -125,18 +135,41 @@
                     <button class="color-identifier-buttom" id="ai-sb" dis></button>
                 </div>
                 <p>These behaviors allow agents to move realistically through the environment, adjusting their direction and speed in real time based on their objectives and environmental conditions.</p>
-                <p>In Two Wonders I implement an specific types of movement like Seek, Arrive, Flee, Pursue, Avoid and Evade. All of these return a Steer_t structure, which contains information about the agent's speed, orientation, and whether it has arrived.</p>
+                <p>In Two Wonders I implement the following types of movement: Seek, Arrive, Flee, Pursue, Avoid, Evade and Flocking. All of these return a Steer_t structure, which contains information about the agent's speed, orientation, and whether it has arrived.</p>
             </div>
             <div class="tecnologia">
                 <div class="tecnologia-title">
                     <h3>Pathfinding</h3>
                     <button class="color-identifier-buttom" id="ai-pathf" dis></button>
                 </div>
+                <p>It is a method used for agents to find the most optimal path between two points. In our case, we use
+                     it to make enemies move towards the player at long distances and so they can return to their patrol
+                      position after a chase. In both cases the origin will be the current position of this.
+                </p>
+                <p>To determine the navigable areas for the AIs, we have created a system of navigation meshes that are placed on the level model and through a script we obtain the vertices, centers and orthocenters for each one compiled in a json file. Then, our maps is responsible for importing all this information into a singleton called navmesh_info and 
+                    creates the NavMesh entities that will be used for later debugging.
+                </p>
+                <p>Finally, the A* algorithm has been implemented that uses the Euclidean distance as a heuristic. This method works with directed weighted graphs, so a Graph class has been created that is responsible for creating the nodes and connections from the navigation meshes. 
+                </p>
+                <div class="imgs-col">
+                    <img src="../assets/navmeshes_structure.jpg" width="600px" height="350px">
+                    <img src="../assets/navmeshes_debug.png" width="600px" height="350px">
+                </div>
             </div>
             <div class="tecnologia">
                 <div class="tecnologia-title">
                     <h3>Sensorial Perception</h3>
                     <button class="color-identifier-buttom" id="ai-sp" dis></button>
+                </div>
+                <p>Two Wonders uses a vision-based perception system that uses a cone as a field of vision which emerges
+                     from the head towards where the agent is facing and has a ray system for obstacle detection. 
+                     In addition, it has perception by ear through alert radios that determine the volume of the 
+                     sound that the agent can capture and the minimum time to detect you.
+                </p>
+                <p>Both have iconography to show feedback to the player about when and how they detect it.</p>
+                <div class="imgs-col">
+                    <img src="../assets/view_percepction.png" width="600px" height="350px">
+                    <img src="../assets/hear_perception.png" width="600px" height="350px">
                 </div>
             </div>
         </div>

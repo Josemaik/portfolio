@@ -25,6 +25,10 @@
     scroll-behavior: smooth;
     scroll-margin: 53px;
 }
+
+body{
+    background-color: var(--primary-color);
+}
 /*Aqui defino las fuentes de los h1,h2,h3*/
 h1, h2, h3 {
     font-family: 'Playpen Sans';
@@ -107,6 +111,82 @@ p,a{
     text-align: justify;
     margin: 10px 10px 10px 10px;
 }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+.social-icon img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+    padding: 0 0.5em;
+}
+
+.social-icon:hover img {
+    transform: scale(1.2);
+}
+/*Contributions section*/
+#contributions{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contributions > span{
+    background-color: var(--highlight-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 20px;
+}
+#contributions > h1{
+    font-size: 45px;
+    margin: 10px;
+}
+/*Contribution*/
+.contribution{
+    background-color: var(--secondary-color); /* Fondo de color */
+    padding: 20px; /* Espaciado interno */
+    max-width: 800px; /* Limitar el ancho del contenido */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Ce
+    margin: 40px; /* Espaciado externo centrado */
+    margin-top: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto elegante */
+}
+.contribution h2{
+    padding: 0px 0px 20px 0px;
+}
+.contribution p {
+    margin-bottom: 15px; /* Separación entre párrafos */
+    text-align: justify; /* Texto justificado */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+}
+.contribution .imgs {
+    display: flex; /* Hacer que las imágenes se alineen en fila */
+    flex-wrap: wrap; /* Permitir que las imágenes bajen a la siguiente fila si exceden el espacio */
+    gap: 10px; /* Espaciado entre imágenes */
+    justify-content: space-evenly; /* Distribuir las imágenes uniformemente */
+}
+.contribution .imgs img {
+    /*width: calc(33.333% - 10px); /* Ancho de un tercio menos el espacio entre imágenes */
+    /*max-width: 200px; /* Ancho máximo */
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+    object-fit: cover; /* Ajustar contenido de la imagen */
+}
+.imgs-col{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: center;
+}
+/* Each tech */
 .tecnologia-title{
     display:flex;
     flex-direction: row;
